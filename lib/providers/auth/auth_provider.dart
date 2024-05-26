@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 import 'package:dog_app/exceptions/custom_exception.dart';
-import 'package:dog_app/providers/auth_state.dart';
+import 'package:dog_app/providers/auth/auth_state.dart';
 import 'package:dog_app/repositories/auth_repository.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';

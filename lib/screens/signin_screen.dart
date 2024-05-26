@@ -1,6 +1,6 @@
 import 'package:dog_app/exceptions/custom_exception.dart';
-import 'package:dog_app/providers/auth_provider.dart';
-import 'package:dog_app/providers/auth_state.dart';
+import 'package:dog_app/providers/auth/auth_provider.dart';
+import 'package:dog_app/providers/auth/auth_state.dart';
 import 'package:dog_app/screens/signup_screen.dart';
 import 'package:dog_app/utils/logger.dart';
 import 'package:dog_app/widgets/error_dialog_widget.dart';

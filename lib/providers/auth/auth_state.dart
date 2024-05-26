@@ -1,5 +1,9 @@
-import 'package:dog_app/providers/auth_state.dart';
+import 'package:dog_app/providers/auth/auth_state.dart';
+
+
 // 로그인유효성
+
+
 enum AuthStatus {
   authenticated,
   unauthenticated,

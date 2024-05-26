@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:dog_app/exceptions/custom_exception.dart';
-import 'package:dog_app/providers/auth_provider.dart';
+import 'package:dog_app/providers/auth/auth_provider.dart';
 import 'package:dog_app/screens/signin_screen.dart';
 import 'package:dog_app/widgets/error_dialog_widget.dart';
 import 'package:flutter/material.dart';

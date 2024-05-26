@@ -1,4 +1,4 @@
-import 'package:dog_app/providers/auth_state.dart';
+import 'package:dog_app/providers/auth/auth_state.dart';
 import 'package:dog_app/screens/main_screen.dart';
 import 'package:dog_app/screens/signin_screen.dart';
 import 'package:flutter/material.dart';

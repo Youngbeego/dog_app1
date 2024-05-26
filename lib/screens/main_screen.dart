@@ -1,4 +1,5 @@
-import 'package:dog_app/providers/auth_provider.dart';
+import 'package:dog_app/providers/auth/auth_provider.dart';
+import 'package:dog_app/screens/feed_upload_screen.dart';
 import 'package:dog_app/utils/logger.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -37,6 +38,7 @@ class _MainScreenState extends State<MainScreen>with SingleTickerProviderStateMi
           controller: tabController,
           physics: NeverScrollableScrollPhysics(),
           children: [
+            FeedUploadScreen(),
             Center(child: Text('1'),),
             Center(child: Text('2'),),
             Center(child: Text('3'),),
@@ -70,6 +72,13 @@ class _MainScreenState extends State<MainScreen>with SingleTickerProviderStateMi
               icon: FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text('좋아요 누른 유기견'),
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text('입양'),
               ),
               label: '',
             ),
