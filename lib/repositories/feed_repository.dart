@@ -1,5 +1,7 @@
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dog_app/models/feed_model.dart';
+import 'package:dog_app/models/user_model.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:uuid/uuid.dart';
 
@@ -38,21 +40,29 @@ class FeedRepository {
       return await taskSnapshot.ref.getDownloadURL();
     }).toList());
 
-    await feedDocRef.set({
-      'uid': uid,
-      'feedId': feedId,
-      'desc': desc,
-      'imageUrls': imageUrls,
-      'likes': [],
-      'likeCount': 0,
-      'commentCount': 0,
-      'createdAt': Timestamp.now(),
-      'writer': userDocRef,
-      'breed': breed,
-      'age' : age,
-      'color': color,
-          // Add age field
-    });
+     DocumentSnapshot<Map<String,dynamic>> userSanpshot = await userDocRef.get();
+    UserModel userModel = UserModel.fromMap(userSanpshot.data()!);
+
+    FeedModel feedModel =  FeedModel.fromMap({
+       'uid': uid,
+       'feedId': feedId,
+       'desc': desc,
+       'imageUrls': imageUrls,
+       'likes': [],
+       'likeCount': 0,
+       'commentCount': 0,
+       'createAt': Timestamp.now(),
+       'writer': userDocRef,
+       'breed': breed,
+       'age' : age,
+       'color': color,
+     });
+
+
+
+    await feedDocRef.set(feedModel.toMap(userDocRef: userDocRef));
+
+
 
     await userDocRef.update({
       'feedCount': FieldValue.increment(1),
